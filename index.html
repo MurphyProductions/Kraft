@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keep Craft v0.9.3 beta</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/jquery-ui-git.css">
+	<link rel="stylesheet" id="estilo" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+
+	<script type="text/javascript" src="jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/js-cookie.js"></script>
+	<!--<script type="text/javascript" src="js/json2.js"></script>
+	<script type="text/javascript" src="js/json_parse.js"></script>-->
+	<script type="text/javascript" src="js/json-array.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/prestige.js"></script>
+	<script type="text/javascript" src="js/traderates.js"></script>
+	<script type="text/javascript" src="js/heirlooms.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/technology.js"></script>
+	<script type="text/javascript" src="js/expansion.js"></script>
+	<script type="text/javascript" src="js/casino.js"></script>
+	<script type="text/javascript" src="js/deals.js"></script>
+	<script type="text/javascript" src="js/offline.js"></script>
+</head>
+<body>
+
+ <div id='header'>
+    <div class="infokraft">Made By Nate Murphy
+
+
+
+	<button class='but' onclick="save()">Save</button> <button class='but'  <button class='but'  data-toggle="modal" data-target="#options">Options</button> <div class="population"></div><div class="ships"></div><div class="titles"></div><div class="territory"></div><div class="shardsnum"></div><div class="legacynum"></div><div class="treasurenum"></div>
+        <br><br>
+	</div>
+ <div id='navigation'>          
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#build">Buildings</a></li>
+		<li id="facilitiespane"><a data-toggle="tab" href="#facilities">Facilities</a></li>
+		<li id="jobspane"><a data-toggle="tab" href="#jobs">Jobs</a></li>
+		<li id="technologiespane"><a data-toggle="tab" href="#technologies">Technologies</a></li>
+		<li id="craftingpane"><a data-toggle="tab" href="#crafting">Crafting</a></li>
+		<li id="militarypane"><a data-toggle="tab" href="#military">Military</a></li>
+		<li id="casinopane"><a data-toggle="tab" href="#casino">Casino</a></li>
+		<li id="marketpane"><a data-toggle="tab" href="#market">Market</a></li>
+		<li id="leaderpane"><a data-toggle="tab" href="#leader">Leaders</a></li>
+		<li id="dockpane"><a data-toggle="tab" href="#dock">Dock</a></li>
+		<li id="heirloomspane"><a data-toggle="tab" href="#heirlooms">Heirlooms</a></li>
+		<li id="legacypane"><a data-toggle="tab" href="#legacy">Legacy</a></li>
+	</ul>
+	<br><br>
+</div>
+<div id='inventory'>
+	<div class="inventory">
+	</div>
+	<div class="inventory_craft">
+	</div>
+</div>
+<div id='content'>
+
+	<div class="tab-content">
+
+		<div id="build" class="build tab-pane fade in active">
+
+		<div class="buildlist">
+
+			<div class="block build_lumbermill"></div>
+			<div class="block build_mine"></div>
+			<div class="block build_warehouse"></div>
+			<div class="block build_fountain"></div>
+			<div class="block build_pasture"></div><button class="toggle toggle_pasture" onclick='toggle("pasture")'>Toggle</button>
+			<div class="block build_house"></div>
+			<div class="block build_library"></div>
+			<div class="block build_banner"></div>
+			<div class="block build_foundry"></div><button class="toggle toggle_foundry" onclick='toggle("foundry")'>Toggle</button>
+			<div class="block build_barn"></div>
+			<div class="block build_casino"></div>
+			<div class="block build_market"></div>
+			<div class="block build_statue"></div>
+			<div class="block build_kiln"></div><button class="toggle toggle_kiln" onclick='toggle("kiln")'>Toggle</button>
+			<div class="block build_towncenter"></div>
+			<div class="block build_castle"></div>
+			<br><br><br><br><br><br>
+			</div>
+			<div class="buildlist">
+			<div class="block build_shipyard"></div><button class="toggle toggle_shipyard" onclick='toggle("shipyard")'>Toggle</button>
+			<div class="block build_docks"></div>
+			<div class="block build_bank"></div><button class="toggle toggle_bank" onclick='toggle("bank")'>Toggle</button>
+			<div class="block build_crusher"></div><button class="toggle toggle_crusher" onclick='toggle("crusher")'>Toggle</button>
+			<div class="block build_blockyard"></div><button class="toggle toggle_blockyard" onclick='toggle("blockyard")'>Toggle</button>
+			<div class="block build_bunker"></div>
+			<div class="block build_laboratory"></div><button class="toggle toggle_laboratory" onclick='toggle("laboratory")'>Toggle</button>
+			<div class="block build_tradeoutpost"></div>
+			<div class="block build_scienceoutpost"></div>
+			<div class="block build_militaryoutpost"></div>
+			<div class="block build_quarry"></div>
+			<div class="block build_carpentry"></div><button class="toggle toggle_carpentry" onclick='toggle("carpentry")'>Toggle</button>
+			<div class="block build_blastfurnace"></div><button class="toggle toggle_blastfurnace" onclick='toggle("blastfurnace")'>Toggle</button>	
+			<div class="block build_compressor"></div>
+			<div class="block build_repository"></div>
+			<div class="block build_trainstation"></div>
+			</div>
+			<br><br><br><br><br><br>
+		</div>
+		<div id="facilities" class="facilities tab-pane fade">
+		<div class="energytab">
+		<div class="progress" style="width:90%">
+		  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+		    0kwh
+		  </div>
+		</div>
+		<div class="energylog">
+
+		</div>
+		</div>
+		<div class="facilitiesbuild">
+			<div class="block build_powerplant"></div><button class="toggle toggle_powerplant" onclick='toggle("powerplant")'>Toggle</button>
+			<div class="block build_cementkiln"></div><button class="toggle toggle_cementkiln" onclick='toggle("cementkiln")'>Toggle</button>
+			<div class="block build_university"></div><button class="toggle toggle_university" onclick='toggle("university")'>Toggle</button>
+			<div class="block build_concretemixer"></div><button class="toggle toggle_concretemixer" onclick='toggle("concretemixer")'>Toggle</button>
+			<div class="block build_toolfactory"></div><button class="toggle toggle_toolfactory" onclick='toggle("toolfactory")'>Toggle</button>
+			<div class="block build_barracks"></div><button class="toggle toggle_barracks" onclick='toggle("barracks")'>Toggle</button>
+			</div>
+		</div>
+		<div id="jobs" class="people tab-pane fade">
+			<div class="block hire_woodcutter"></div><button class="fire fire_woodcutter" onclick='fire("woodcutter")'>Fire 1</button><br>
+			<div class="block hire_smelter"></div><button class="fire fire_smelter" onclick='fire("smelter")'>Fire 1</button><br>
+			<div class="block hire_farmer"></div><button class="fire fire_farmer" onclick='fire("farmer")'>Fire 1</button><br>
+			<div class="block hire_miner"></div><button class="fire fire_miner" onclick='fire("miner")'>Fire 1</button><br>
+			<div class="block hire_foundryman"></div><button class="fire fire_foundryman" onclick='fire("foundryman")'>Fire 1</button><br>
+			<div class="block hire_sailor"></div><button class="fire fire_sailor" onclick='fire("sailor")'>Fire 1</button><br>
+			<div class="block hire_scientist"></div><button class="fire fire_scientist" onclick='fire("scientist")'>Fire 1</button><br>
+			<div class="block hire_marketer"></div><button class="fire fire_marketer" onclick='fire("marketer")'>Fire 1</button><br>
+		</div>
+		<div id="technologies" class="technologies tab-pane fade">
+			<div class="block research_economy"></div>
+			<div class="block research_science"></div>
+			<div class="block research_military"></div><br>
+			<div class="block craft_patent"></div>
+			<div class="block craft_book"></div>
+			<div class="block craft_strategy"></div><br>
+		<button class="toggletech" onclick="toggletech()">Hide researched technologies</button><br><br>
+		<div class="technolist">
+			<div class="block tech_coppertools"></div>
+			<div class="block tech_pickaxe"></div>
+			<div class="block tech_spear"></div>
+			<div class="block tech_exploration"></div>
+			<div class="block tech_ironfoundry"></div>
+			<div class="block tech_metallurgy"></div>
+			<div class="block tech_sword"></div>
+			<div class="block tech_storage"></div>
+			<div class="block tech_currency"></div>
+			<div class="block tech_coin"></div>
+			<div class="block tech_exchange"></div>
+			<div class="block tech_bronze"></div>
+			<div class="block tech_bronzetools"></div>
+			<div class="block tech_charcoal"></div>
+			<div class="block tech_centralisation"></div>
+			<div class="block tech_steel"></div>
+			<div class="block tech_manufacturing"></div>
+			<div class="block tech_steeltools"></div>
+			<div class="block tech_husbandry"></div>
+			<div class="block tech_cavalry"></div>
+			<div class="block tech_leadership"></div>
+			<div class="block tech_armament"></div>
+			<div class="block tech_gambling"></div>
+			<div class="block tech_redeem"></div>
+			<div class="block tech_wrapping"></div>
+			<div class="block tech_shipyard"></div>
+			<div class="block tech_sailing"></div>
+			<div class="block tech_trade"></div>
+			<div class="block tech_cache"></div>
+			<div class="block tech_specialization"></div>
+			<div class="block tech_geology"></div>
+			<div class="block tech_funding"></div>
+			<div class="block tech_tactics"></div>
+			<div class="block tech_healing"></div>
+			<div class="block tech_savings"></div>
+			<div class="block tech_studies"></div>
+			<div class="block tech_organization"></div>
+			<div class="block tech_culturaltrade"></div>
+			<div class="block tech_intelligence"></div>
+			<div class="block tech_crushing"></div>
+			<div class="block tech_contracts"></div>
+			<div class="block tech_floatglass"></div>
+			<div class="block tech_canteen"></div>
+			<div class="block tech_galleon"></div>
+			<div class="block tech_glassblowing"></div>
+			<div class="block tech_risk"></div>
+			<div class="block tech_rampage"></div>
+			<div class="block tech_construction"></div>
+			<div class="block tech_investment"></div>
+			<div class="block tech_domestication"></div>
+			<div class="block tech_wareconomy"></div>
+			<div class="block tech_architecture"></div>
+			<div class="block tech_undergroundstorage"></div>
+			<div class="block tech_elephantry"></div>
+			<div class="block tech_chemistry"></div>
+			<div class="block tech_expansion"></div>
+			<div class="block tech_internationalization"></div>
+			<div class="block tech_investigation"></div>
+			<div class="block tech_camps"></div>
+			<div class="block tech_deals"></div>
+			<div class="block tech_careening"></div>
+			<div class="block tech_fireship"></div>
+			<div class="block tech_finding"></div>
+			<div class="block tech_multitasking"></div>
+			<div class="block tech_commodities"></div>
+			<div class="block tech_openmining"></div>
+			<div class="block tech_seacaptain"></div>
+			<div class="block tech_masonry"></div>
+			<div class="block tech_woodwork"></div>
+			<div class="block tech_quenching"></div>
+			<div class="block tech_commerce"></div>
+			<div class="block tech_insecticides"></div>
+			<div class="block tech_castiron"></div>
+			<div class="block tech_explosives"></div>
+			<div class="block tech_safes"></div>
+			<div class="block tech_wisdom"></div>
+			<div class="block tech_ammunition"></div>
+			<div class="block tech_gunnery"></div>
+			<div class="block tech_packaging"></div>
+			<div class="block tech_shareholding"></div>
+			<div class="block tech_windward"></div>
+			<div class="block tech_carrying"></div>
+			<div class="block tech_safestorage"></div>
+			<div class="block tech_mineralcoal"></div>
+			<div class="block tech_metalwork"></div>
+			<div class="block tech_steamengine"></div>
+			<div class="block tech_railtransport"></div>
+			<div class="block tech_industrialization"></div>
+			<div class="block tech_armoredcombat"></div>
+			<div class="block tech_patents"></div>
+			<div class="block tech_academicpublishing"></div>
+			<div class="block tech_logistics"></div>
+			<div class="block tech_electricity"></div>
+			<div class="block tech_pyroprocessing"></div>
+			<div class="block tech_triforce"></div>
+			<div class="block tech_education"></div>
+			<div class="block tech_cementhydration"></div>
+			<div class="block tech_wargames"></div>
+			<div class="block tech_workforce"></div>
+			<div class="block tech_luck"></div>
+			<div class="block tech_militarization"></div>
+			<div class="block tech_industrialrevolution"></div>
+			<br><br><br>
+			<div class="autolist">
+			</div>
+		</div>
+			<br><br><br><br><br><br>
+		</div>
+
+
+	<div  id="crafting" class="crafting tab-pane fade">
+	<div class="craftline">
+		<div class="craftamount"></div>
+		<div class="block build_workbench"></div><button class="toggle toggle_workbench" onclick='toggle("workbench")'>Toggle</button><br>
+		<div class="block build_workshop"></div><button class="toggle toggle_workshop" onclick='toggle("workshop")'>Toggle</button><br>
+		<div class="block build_factory"></div><button class="toggle toggle_factory" onclick='toggle("factory")'>Toggle</button><br><br>
+		<div class="block craft_pickaxe"></div>
+		<div class="block craft_spear"></div>
+		<div class="block craft_sword"></div>
+		<div class="block craft_block"></div>
+		<div class="block craft_coin"></div>
+		<div class="block craft_bronze"></div>
+		<div class="block craft_structure"></div>
+		<div class="block craft_armor"></div>
+		<div class="block craft_supplies"></div>
+		<div class="block craft_chest"></div>
+		<div class="block craft_glass"></div>
+		<div class="block craft_bottle"></div>
+		<div class="block craft_greatsword"></div>
+		<div class="block craft_frame"></div>
+		<div class="block craft_brick"></div>
+		<div class="block craft_gunpowder"></div>
+		<div class="block craft_ammo"></div>
+		<div class="block craft_musket"></div>
+		<div class="block craft_plate"></div>
+		<div class="block craft_engine"></div>
+		<br><br><br><br><br>
+	</div>
+	</div>
+	<div id="military" class="soldiers tab-pane fade">
+		<div class="block hire_pikeman"></div><button class="fire fire_pikeman" onclick='fire("pikeman")'>Fire 1</button><br>
+		<div class="block hire_swordman"></div><button class="fire fire_swordman" onclick='fire("swordman")'>Fire 1</button><br>
+		<div class="block hire_knight"></div><button class="fire fire_knight" onclick='fire("knight")'>Fire 1</button><br>
+		<div class="block hire_medic"></div><button class="fire fire_medic" onclick='fire("medic")'>Fire 1</button><br>
+		<div class="block hire_berserk"></div><button class="fire fire_berserk" onclick='fire("berserk")'>Fire 1</button><br>
+		<div class="block hire_warelephant"></div><button class="fire fire_warelephant" onclick='fire("warelephant")'>Fire 1</button><br>
+		<div class="block hire_musketeer"></div><button class="fire fire_musketeer" onclick='fire("musketeer")'>Fire 1</button><br>
+		<div class="block hire_lighttank"></div><button class="fire fire_lighttank" onclick='fire("lighttank")'>Fire 1</button><br><br>
+
+		<div class="block expedition"></div><br>
+		<div class="encounter"></div><br>
+		<div class="expeditionresult"></div><br>
+	</div>
+	<div id="casino" class="casino tab-pane fade">
+	<div class="casinoreward">
+	<div class="block build_relic"></div><br>
+	<div class="block build_share"></div>
+	</div><br><br>
+	    <div class="slotmachine">
+		<table id="slot">
+		<tr><td class="slot00">A</td><td class="slot01">Q</td><td class="slot02">7</td></tr>
+		<tr><td class="slot10">Q</td><td class="slot11">A</td><td class="slot12">J</td></tr>
+		<tr><td class="slot20">K</td><td class="slot21">*</td><td class="slot22">A</td></tr>
+		</table>
+
+		<button onclick="slotstart(50)">50 coins</button>
+		<button onclick="slotstart(250)">250 coins</button>
+		<button onclick="slotstart(1000)">1000 coins</button>
+		<button onclick="slotstart(5000)">5000 coins</button>
+
+		<div class="slotlog"></div>
+		</div>
+	<div class="casinogame1">
+	<div class="betresult">000</div>
+	Amount to bet:<input value="0.5" type="number" class="betamount"></input><br>
+	<button onclick="bet('low')">Bet low</button> <button onclick="bet('high')">Bet high</button><br>
+        <div class="casinolog"></div>
+        Bet higher or lower than 500
+    </div><br><br>
+    <div class="casinogame2">
+    5 coins to play<br>
+    <div class="tablero"></div>
+    <button class="playgame2" onclick="playgame2('5')">Play</button> <button class="playx10" onclick="playgame2('50')">Play x10</button> <button class="playx100" onclick="playgame2('500')">Play x100</button>
+    <div class='totalwon'></div>
+    </div>
+
+	</div>
+
+
+	<div id="market" class="market tab-pane fade">
+	<div class="trains"></div>
+	<div class="block hire_cargotrain"></div><button class="fire salvage_cargotrain" onclick='salvage("cargotrain")'>Salvage 1</button><br>
+	<div class="tradetrain">
+	<div style="text-align:center">Resource to get</div><be>
+	<select class="tradetrainselect"></select><br><br><div class="tradetrainlog"></div>
+	</div>
+	Coins can be traded for commodities at the listed per coin rate : <br><br>
+	<div class="trade trade_wood"></div><div class="block trademax_wood">Buy Max</div><br>
+	<div class="trade trade_mineral"></div><div class="block trademax_mineral">Buy Max</div><br>
+	<div class="trade trade_food"></div><div class="block trademax_food">Buy Max</div><br>
+	<div class="trade trade_sand"></div><div class="block trademax_sand">Buy Max</div><br><br><br>
+	<div class="deals">
+	<div class="deallog">
+	</div><br><div class="dealtime">
+	</div><br><br>
+	<button class="btndeal" onclick="deal()">Deal</button>
+	</div><br><br>
+	<div class="block rush1"></div><br>
+	<div class="block rush24"></div><br>
+	<div class="block rush7"></div><br>
+	<br>
+	<div class="currentrush"></div>
+	</div>
+	<div id="leader" class="leader tab-pane fade">
+	Cost 1 title per lv<br>
+	<div class="block leader_sucellus"></div><br>
+	<div class="block leader_eredal"></div><br>
+	<div class="block leader_khrysos"></div><br>
+	<div class="block leader_elisia"></div><br>
+	<div class="block leader_xochiquetzal"></div><br>
+	<div class="block leader_warmuk"></div><br>
+	<div class="block leader_foehn"></div><br>
+	<div class="block leader_alfear"></div><br>
+	<br><br>
+	<div class="block reespec"></div><br>
+
+	</div>
+	<div id="dock" class="dock tab-pane fade">
+	<div class="block hire_galley"></div><button class="fire salvage_galley" onclick='salvage("galley")'>Salvage 1</button><br>
+	<div class="block hire_galleon"></div><button class="fire salvage_galleon" onclick='salvage("galleon")'>Salvage 1</button><br>
+	<div class="block hire_fireship"></div><button class="fire salvage_fireship" onclick='salvage("fireship")'>Salvage 1</button><br>
+	<div class="block hire_caravel"></div><button class="fire salvage_caravel" onclick='salvage("caravel")'>Salvage 1</button><br><br>
+	<div class="tradesea">
+	Trade mission<br>
+	Amount: <input class="tradeamount" type="number" value="1"></input><button class="maxtrade" onclick="maxtrade()">MAX</button><br><br>
+	Send <select class="selgive"></select><div class="ratiotrade"></div><select class="selget"><option value='nothing'>----</option></select> Receive<br><br>
+	<div class="traderecieve"></div><br>
+	<button class="tradego" onclick="tradeship()">Trade</button>
+
+
+
+
+	</div><br><br>
+	<div class="expansionsea">
+	Expansion mission<br>
+	If you lose, all your ships will be destroyed.<br><br>
+	<div class="expansionlog">
+		
+
+	</div><br><br>
+	<button class="expand" onclick="expand()">Fight</button>
+	</div><br><br>
+	<div class="docklog">
+
+	</div>
+	<button type="button" class="resetbutton" data-toggle="modal" data-target="#myModal">Explore new continent</button>
+	</div>
+
+
+
+		<div id="heirlooms" class="heirlooms tab-pane fade">
+		<button id="sellheirloombutton" onclick="sellheirloom()">Sell</button>
+		<button onclick="swapheirlooms()">Pick</button><br><br>
+		<div class="heirloomslog"></div><br><br>
+		Your empire heirloom:<br>
+		<div class="heirloomslog2"></div><br>
+		
+		<button id="upgradeheirloom" onclick="upgradeheirloom()">Upgrade</button> <button id="save" onclick="storeheirlooms(-1)">Store</button><br><br>
+		Your stored heirlooms:<br>
+		<div class="heirloomlist"></div><br>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="legacy" class="legacy tab-pane fade">
+	Use your legacy wisely<br>
+	<div class="block legacy_motivation"></div><br>
+	<div class="block legacy_depot"></div><br>
+	<div class="block legacy_mastery"></div><br>
+	<div class="block legacy_vengeance"></div><br>
+	<div class="block legacy_aegis"></div><br>
+	<div class="block legacy_bargain"></div><br>
+	<div class="block legacy_learning"></div><br>
+	<div class="block legacy_memory"></div><br><br><br><br>
+
+	<div class="block legacy_warp"></div>
+	</div>
+	</div>
+
+	  
+	  <div class="modal fade" id="options" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title messagetitle">Options</h4>
+        </div>
+        <div class="modal-body messagetext">
+		 <button class='but' onclick="cleartheme()" >Clear theme</button><br>
+		 <button class='but'  onclick="darktheme()" >Dark theme</button><br>
+		 <button class='but'  data-toggle="modal" onclick="encode()" data-target="#importmodal">Import/Export</button><br><br>
+		 Performance factor (Change only if you experience freezing or delay)<br>
+		 <select id='performanceselect'>
+		 	<option value='1'>Maximum performance</option>
+		 	<option value='2'>Medium performance</option>
+			<option value='3'>Low performance</option>
+		 </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	  <div class="modal fade" id="importmodal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          Copy or paste here your save<br>
+          <h4 class="modal-title messagetitle">Import / Export</h4>
+        </div>
+        <div class="modal-body messagetext">
+        To keep your save safe, remember to export to a file from time to time.<br><br>
+		<textarea class="inputtxt">
+			
+
+
+		</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="decode()">Import!</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+	  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title messagetitle">Exploring new lands</h4>
+        </div>
+        <div class="modal-body messagetext">
+		Exploring new lands is not an easy task.<br>
+		You will embark on a journey with no turning back, and will never again see your current civilization in this land.<br>
+		You will only carry the legacy that this civilization once gave you.<br>
+		If you are bold enough to explore a new continent, we will try to fill your ships with as many chests as we have to help you in your new journey,<br>
+		 but it will take some time until you get where you are now are, think wisely.<br>
+		Are you sure you want to do this?<br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetgame()">GO!</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+	  <div class="modal fade" id="changelog" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title messagetitle">Changelog</h4>
+        </div>
+        <div class="modal-body messagetext changes">
+        <b>V 0.9.3</b>
+        <ul>
+        <li>Added 10 new heirloom slots</li>
+        <li>The interface its a bit clunky, but it works for now</li>
+        <li>Performance option for slow computers or very advanced games added</li>
+        <li>Several bugs fixed</li>
+        </ul>
+        <b>V 0.9.2</b>
+        <ul>
+        <li>Heirlooms now dont sell for diamonds, but for shards</li>
+        <li>Shards can be used to improve heirlooms</li>
+        <li>Shards survive resets</li>
+        <li>Important bug fixes</li>
+        </ul>
+        <b>V 0.9.1</b>
+        <ul>
+        <li>New heirlooms now have a bonus associated with them</li>
+        <li>Old heirlooms dont have bonuses but they can be sold for their full diamond cost</li>
+        <li>Only the equipped heirloom its in effect</li>
+        <li>New types of heirloom added, some eliminated to fit the bonus they give.</li>
+        <li>Added buymax buttons for the market</li>
+        </ul>
+         <b>V 0.9.0</b>
+        <ul>
+        <li>This update introduces a new mechanic - Heirlooms!</li>
+        <li>This mechanic its still in its earlier phase</li>
+        <li>There are 2 slots for heirlooms right now, the heirloom in the first slot will be sold automatically if you find a new one</li>
+        <li>They can be found on expeditions, fights or trades at any level on the game.</li>
+        <li>Heirlooms dont dissapear when you explore a new continent</li>
+        <li>Heirlooms give diamonds when sold</li>
+        <li>Heirlooms can be common(white), uncommon(green), rare(blue),epic(purple),legendary(orange) or trascendental(red)</li>
+        <li>In the future they will give bonuses and other interesting stuff, so keep an eye on them!</li>
+        </ul>
+        <b>V 0.8.9</b>
+        <ul>
+        <li>New economy tech</li>
+        <li>New casino game - Slot machines!</li>
+        </ul>
+        <b>V 0.8.8</b>
+        <ul>
+        <li>New science and economy tech</li>
+        <li>New building - Factory</li>
+        <li>Factories provide a way to craft massive amounts of items with 1 click</li>
+        <li>Now buildings wich require more resources than your storage capacity appear red</li>
+        <li>Now you can see how much legacy you will get before exploring a new continent</li>
+        </ul>	
+        <b>V 0.8.7</b>
+        <ul>
+        <li>New military tech</li>
+        <li>New building - Barracks</li> 
+        <li>Barracks provide housing and planification for your troops.</li>
+        </ul>	
+        <b>V 0.8.6</b>
+        <ul>
+        <li>New military tech</li>
+        <li>New item - Plans</li>
+        <li>New way to get books</li>
+        </ul>	
+       	<b>V 0.8.5</b>
+        <ul>
+        <li>New economy tech</li>
+        <li>New building - Tool factory</li>
+        <li>New item - toolboxes</li>
+        <li>Lots of changes in flavor text and typos</li>
+        <li>Fixed various bugs</li>
+        </ul>	
+       	<b>V 0.8.4</b>
+        <ul>
+        <li>Diamond update patch</li>
+        <li>Diamonds can be obtained as loot from military expeditions</li>
+        <li>Having diamonds unlocks a new section on the market tab</li>
+        <li>Spending diamonds can double production for 1 hour, 1 day, or 1 week</li>
+        <li>(Note: this is better than adding 100% to your production bonus- this doubles your production)</li>
+        <li>Fixed the mastery techs not resetting correctly after exploring a new continent</li>  
+        </ul>	
+	    <b>V 0.8.3</b>
+        <ul>
+        <li>New technology added</li>
+        <li>New facility added- Concrete Mixer</li>
+        <li>Concrete mixers produce concrete</li>
+                
+        </ul>	
+		
+        <b>V 0.8.2</b>
+        <ul>
+        <li>New science technology added</li>
+        <li>New facility added- University</li>
+        <li>Universities produce and store knowledge and produce books</li>
+        <li>Reduced costs of mastery technology</li>
+        <li>Fixed some typos</li>
+        
+        </ul>
+        <b>V 0.8.1</b>
+        <ul>
+        <li>This patch introduces an infinite amount of procedurally generated new technologies</li>
+        <li>These are called mastery technologies, and will be unlocked in all technology trees after 100k knowledge is invested</li>
+        <li>There are 5 different mastery technologies types for each tree</li>
+        <li>Mastery technologies serve the purpose of filling the gaps between important technologies</li>
+        <li>Some of may seem expensive, but they are intended for ultra late game</li>
+        <li>Feedback on this feature will be greatly appreciated</li>
+        <li>Fixed several bugs</li>
+        </ul>
+        <b>V 0.8.0</b>
+        <ul>
+        <li>Fixed the import/export feature, elminiating missing perks or legacy</li>
+        <li>Decreased the price of plates</li>
+        <li>Decreased the plate cost of engines</li>
+        <li>New economy technology- Patents</li>
+        <li>This technology allows the purchase of books (called Patents) with coins</li>
+        <li>Science Books renamed to Scientific Papers, but they are still the same book item</li>
+        </ul>
+        <b>V 0.7.9</b>
+        <ul>
+        <li>New neutral technology added</li>
+        <li>New Material - Cement</li>
+        <li>New Facility - Cement Kilns</li>
+        <li>Cement its stored in bunkers</li>
+        </ul>
+        <b>V 0.7.8</b>
+        <ul>
+        <li>Energy Patch</li>
+        <li>New neutral technology - Electricity</li>
+        <li>All new buildings that require or produce electricity will be organized on a new facilties tab</li>
+        <li>Energy production, consumption, and storage is measured in KWh</li>
+        <li>If one of these new buildings runs out of electricity or other consumed resources, it will automatically turn off.</li>
+        <li>New facility - Power Plant</li>
+       	<li>Power plants consume coal and water to produce and store energy.</li>
+        </ul>
+        <b>V 0.7.7</b>
+        <ul>
+        <li>New science technology - Quarries </li>
+        <li>This technology allows quarries to produce coal</li>
+        <li>Fixed clay production</li>
+        </ul>
+       	<b>V 0.7.6</b>
+        <ul>
+        <li>Legacy Rebalance Patch</li>
+        <li>New legacy perk - Memory</li>
+        <li>Memory increases the amount of legacy you get on the next reset</li>
+        <li>Decreased the increase of prices for perks from 20% to 5% each level</li>
+        <li>Increased Mastery perk craft bonus from 1% to 1.5%</li>
+        <li>Decreased Depot perk storage bonus from 1% to 0.5%</li>
+        <li>Players who reset will have their old-priced points recalculated and refunded</li>
+        </ul>
+        <b>V 0.7.5</b>
+        <ul>
+        <li>New economy/science technology - Logistics</li>
+        <li>This technology allows you to craft directly by clicking the item name on the list</li>
+        <li>Changed the tooltips for the leaders Sucellus and Eredal</li>
+        </ul>
+        <b>V 0.7.4</b>
+        <ul>
+        <li>New science technolgy</li>
+        <li>New building - Workshop</li>
+        <li>Workshops are very powerful for both active and idle players, and are subsequently very expensive</li>
+        <li>They increase craft efficiency</li>
+        <li>They also increase autocraft efficiency when active</li>
+        <li>The Autocraft efficiency bonus affects the production of automatically created items.
+        <li>This includes items like: coins from banks, planks from shipyards, bronze/brick/glass from marketers, etc.</li>
+        <li>Fixed the costs of some technologies</li>
+        </ul>
+        <b>V 0.7.3</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New item - Books</li>
+        <li>Books will be used as currency for new technologies</li>
+       	<li>Books also give 1 legacy when exploring a new continent</li>
+       	<li>Book crafting its not affected by craft efficiency</li>
+        <li>Science will be able to create them, economy and military will get them with other means</li>
+        </ul>
+        <b>V 0.7.2</b>
+        <ul>
+        <li>New bonus technology - unlock by leveling all 3 branches to 100k</li>
+        <li>Minor interface issues fixed</li>
+        </ul>
+        <b>V 0.7.1</b>
+        <ul>
+        <li>New economic technology</li>
+        <li>New building - Train Stations</li>
+        <li>New vehicle - Trains</li>
+        <li>Trains can be used to spend coins for materials</li>
+        <li>Unlike ships, trains provide a constant flow of resources (similar to workers)</li>
+        <li>Remember: trains will consume coins while trading, even if you don't need the material</li>
+        <li>Trains are very powerful tool, and are subsequently very expensive to obtain</li>
+        <li>Fixed a bug causing production to act strangely</li>
+        </ul>
+        <b>V 0.7.0</b>
+        <ul>
+        <li>Combat System Rebalance Patch</li>
+        <li>New combat mechanic - Armor</li>
+        <li>Armor reduces the damage taken</li>
+        <li>Swordman units and Knights get armor</li>
+        <li>Enemy mercenaries and soldiers get armor</li>
+        <li>Balanced multiple enemy fights- they are more common and easier to beat</li>
+        <li>New military technology</li>
+       	<li>New military unit - Light Tanks</li>
+       	<li>Light tanks dont require morale, water, or food to fight, and they produce no morale</li>
+       	<li>They consume coal to go on an expedition, and ammo to fight</li>
+       	<li>They require three population slots</li>
+        </ul>
+        <b>V 0.6.9</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New item - Steam Engines</li>
+        <li>Made craft list appear in two columns to be more readable</li>
+        </ul>
+        <b>V 0.6.8</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New item - Plates</li>
+        <li>Fixed shareholding tooltip</li>
+        <li>Fixed clay production bug</li>
+        </ul>
+        <b>V 0.6.7</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New building - Repository</li>
+        <li>New resource - Nickel</li>
+        </ul>
+        <b>V 0.6.6</b>
+        <ul>
+        <li>New economic technology</li>
+        <li>This technology allows the purchase of shares at the casino</li>
+        </ul>
+        <b>V 0.6.5</b>
+        <ul>
+        <li>New military technology</li>
+        <li>Fixed some minor bugs</li>
+        </ul>
+         <b>V 0.6.4</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New ship - Caravel</li>
+        <li>Caravels have a body between fireships and galleons, and they throw chains that lower the enemy's power each round.</li>
+        <li>Caravels also considerably reduce trade time</li>
+        </ul>
+        <b>V 0.6.3</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New leader - Alfear</li>
+        <li>Named after the player Alfear in honor of his work on the wiki</li>
+        </ul>
+        <b>V 0.6.2</b>
+        <ul>
+        <li>New military technology</li>
+        <li>New item - Muskets</li>
+        <li>New military unit - Musketeers</li>
+        <li>Musketeers need one round to reload, and require ammo to continue fighting.</li>
+        <li>They require fewer resources to go on an expedition than other units relative to their attack power</li>
+        <li>Fixed some dark theme bugs</li>
+        </ul>
+         <b>V 0.6.1</b>
+        <ul>
+        <li>New military technology</li>
+        <li>New item - Ammo</li>
+        <li>The game's theme will be remembered across play sessions</li>
+        </ul>
+         <b>V 0.6.0</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New building - Compressors</li>
+        <li>Compressors increase all storage by 5%</li>
+        </ul>
+         <b>V 0.5.9</b>
+        <ul>
+        <li>Completed casino game 2 rework, now it requires some thought</li>
+        </ul>
+        <b>V 0.5.8</b>
+        <ul>
+        <li>New use for treasures - Boost economy</li>
+        <li>Boost economy gives you what would be produced in 30 min instantly</li
+        <li>Each boost costs more treasure until the game is reset</li>
+        <li>New enemy ship - Blast Ship</li>
+        </ul>
+        <b>V 0.5.7</b>
+        <ul>
+        <li>New economic technology</li>
+        <li>Added link to the new wiki</li>
+        </ul>
+        <b>V 0.5.6</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New military technology</li>
+        <li>New item - Gunpowder</li>
+        </ul>
+        <b>V 0.5.5</b>
+        <ul>
+        <li>New economic technology</li>
+        <li>New job - Marketer</li>
+        <li>Fixed import bug</li>
+        </ul>
+        <b>V 0.5.4</b>
+        <ul>
+		<li>New dark theme option</li>
+		<li>Nine new trade routes for tin and coal</li>
+		<li>Reduced autosave time to 60s to increase performance</li>
+		<li>Fixed game freezing</li>
+		<li>Fixed tooltip errors</li>
+        </ul>
+        <b>V 0.5.3</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New building - Blast Furnace</li>
+		<li>Reduced Foundry price increase</li>
+		<li>Fixed ships not showing salvage option</li>
+        </ul>
+         <b>V 0.5.2</b>
+        <ul>
+		<li>New science/military technology</li>
+		<li>Improved offline mode efficiency</li>
+        </ul>
+        <b>V 0.5.1</b>
+        <ul>
+		<li>New economy technology</li>
+		<li>New technology allows the purchase of sand on the market tab</li>
+        </ul>
+        <b>V 0.5.0</b>
+        <ul>
+		<li>Offline Production Patchs</li>
+		<li>While offline, the game will keep running as usual</li>
+		<li>The maximum amount of offline time is capped at 1 week</li>
+		<li>This cap may be raised in the future</li>
+		<li>The game may appear to freeze on opening if there was a long amount of time between play sessions</li>
+        </ul>
+        <b>V 0.4.9</b>
+        <ul>
+		<li>New economy technology</li>
+		<li>The technology allows miners to produce clay</li>
+		<li>Fixed glass and brick interface error</li>
+        </ul>
+        <b>V 0.4.8</b>
+        <ul>
+		<li>New neutral technology</li>
+		<li>New science/economy technology</li>
+		<li>New building - Carpentry</li>
+		<li>Carpentries automate structure production</li>
+		<li>Bricks are now craftable</li>
+        </ul>
+        <b>V 0.4.7</b>
+        <ul>
+		<li>New science technology</li>
+		<li>New building - Quarry</li>
+        </ul>
+         <b>V 0.4.6</b>
+        <ul>
+		<li>New military/economy technology</li>
+		<li>New maritime leader - Foehn</li>
+        </ul>
+        <b>V 0.4.5</b>
+        <ul>
+		<li>New military technology</li>
+		<li>New material - Clay</li>
+		<li>New item - Brick</li>
+        </ul>
+        <b>V 0.4.4</b>
+        <ul>
+		<li>New economic technology</li>
+		<li>This tech makes a merchant appear in the market every 10 mins with trade offers</li>
+		<li>Some trades may be good, others may be very poor</li>
+        </ul>
+        <b>V 0.4.3</b>
+        <ul>
+		<li>New science maritime technology</li>
+        </ul>
+        <b>V 0.4.2</b>
+        <ul>
+		<li>New economic technology</li>
+		<li>New military technology</li>
+		<li>New ship - Fire Ship</li>
+        </ul>
+        <b>V 0.4.1</b>
+        <ul>
+		<li>Fixed the critical bug of everything disappearing after refreshing</li>
+		<li>Contact developer if there are any problems with the new system of saving progress to cookies</li>
+        </ul>
+        <b>V 0.4.0</b>
+        <ul>
+		<li>New military technology</li>
+		<li>New building - Military Outposts</li>
+		<li>Military Outposts give +3 max morale, +10 housing, and 1 title.</li>
+		<li>All outposts are now available, and are unlockable at 6800 in their respective branch.</li>
+        </ul>
+        <b>V 0.3.9</b>
+        <ul>
+		<li>New economy technology</li>
+		<li>New building - Trade Outposts</li>
+		<li>Trade Outposts produce gold, give +10 housing, and 1 title.</li>
+		<li>Outposts for the military branch are forthcoming</li>
+		<li>Territory cost for each outpost increases based on the total number of outposts, regardless of branch</li>	
+        </ul>
+        <b>V 0.3.8</b>
+        <ul>
+		<li>Import/Export Patch</li>
+        </ul>
+        <b>V 0.3.7</b>
+        <ul>
+		<li>New science technology</li>
+		<li>New building - Scientific Outposts</li>
+		<li>Scientific outposts can be built on conquered territory</li>
+		<li>They produce knowledge, give +10 housing, and 1 title.</li>
+		<li>Outposts for the other branches are forthcoming</li>
+		<li>Fixed several typos</li>
+        </ul>
+        <b>V 0.3.6</b>
+        <ul>
+		<li>New technology at library 7 to make progress to library 8 faster</li>
+		<li>Added subreddit and wiki links</li>
+        </ul>
+         <b>V 0.3.5</b>
+        <ul>
+		<li>New military/economy technology</li>
+		<li>Fixed some ui errors.</li>
+        </ul>
+        <b>V 0.3.4</b>
+        <ul>
+		<li>Added a ship fights</li>
+		<li>Unlocked by a technology that appears with 6000 knowledge in any branch</li>
+		<li>Ships fights allow the conquering of new territory</li>
+		<li>This territory will be used to build different outposts in an upcoming patch</li>
+		<li>Outposts will give different bonuses, population, and titles</li>
+		<li>Losing a fleet fight will cause the destruction of all of your ships</li>
+        </ul>
+         <b>V 0.3.3</b>
+        <ul>
+		<li>Added new legacy perk</li>
+		<li>Added new enemy unit</li>
+		<li>Added a description of casino game 1</li>
+        </ul>
+         <b>V 0.3.2</b>
+        <ul>
+		<li>The game saves the status (on or off) of buildings</li>
+		<li>Fixed technologies not disappearing when Hide Researched Technologies its active</li>
+        </ul>
+         <b>V 0.3.1</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>Added storage building - Bunkers</li>
+        <li>Added a donation button, more coffee = more coding :)</li>
+        </ul>
+        <b>V 0.3.0</b>
+        <ul>
+        <li>New military technology</li>
+        <li>Added military unit - War Elephants</li>
+        <li>War elephants are potent units with massive attack and hp</li>
+        <li>They may disobey in combat, and are also expensive to maintain.</li>
+        </ul>
+         <b>V 0.2.9</b>
+        <ul>
+        <li>New military technology</li>
+        <li>Added item - Elephants</li>
+        <li>Added 11 new trade routes for sand and chemicals</li>
+        <li>Fixed the annoying screen shaking</li>
+        </ul>
+        <b>V 0.2.8</b>
+        <ul>
+        <li>New economy technology</li>
+        <li>This technology allows you to play for more coins in the casino<br>
+        </ul>
+        <b>V 0.2.7</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New building - Laboratory<br>
+        <li>New material - Chemicals</li>
+        </ul>
+           <b>V 0.2.6</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New material - Frame</li>
+        <li>Knowledge gains from trades scale with total ship power</li>
+        </ul>
+        <b>V 0.2.5</b>
+        <ul>
+        <li>New science/economy technology</li>
+        <li>New building - Blockyard</li>
+        <li>Blockyards automate block production</li>
+        <li>Slightly lowered towncenter price ratio</li>
+        <li>Fixed some tooltip bugs</li>
+        </ul>
+         <b>V 0.2.4</b>
+        <ul>
+        <li>New military technology</li>
+        <li>New military unit - Berserks</li>
+        <li>New item - Greatswords</li>
+        <li>New combat mechanic</li>
+        <li>Fixed a bug when trading minerals</li>
+        </ul>
+        <b>V 0.2.3</b>
+        <ul>
+        <li>New science technology</li>
+        <li>Bottles are now craftable</li>
+        </ul>
+        <b>V 0.2.2</b>
+        <ul>
+	<li>New use for treasures - Respec Leaders</li>        	
+        <li>Fixed a bug in casino game 2</li>
+        <li>Fixed medics not counting toward max population when refreshing</li>
+        <li>Fixed halberdier not showing the units number</li>
+        <li>Fixed cache cost</li>
+        <li>Fixed error in contracts tooltip</li>
+        <li>Fixed some typos</li>
+        </ul>
+         <b>V 0.2.1</b>
+        <ul>
+        <li>New military technology</li>
+        <li>New item - Bottles</li>
+        </ul>
+          <b>V 0.2</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>New economic technology</li>
+        <li>New ship - Galleon<br>
+        <li>New ultra secret item<br>
+        </ul>
+        <b>V 0.1.9</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New item - Glass<br>
+        </ul>
+         <b>V 0.1.8</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New building - Crusher<br>
+        <li>New material - Sand</li>
+        <li>Corrected some typos</li>
+        </ul>
+        <b>V 0.1.7</b>
+        <ul>
+        <li>Added new military technology</li>
+        <li>Now invested knowledge gives a little bonus</li>
+         <li>-Economy gives global production</li>
+         <li>-Science gives craft efficiency</li>
+         <li>-Military gives bonus attack and hp</li>
+        <li>These bonuses have diminishing returns</li>
+        </ul>
+        <b>V 0.1.6</b>
+        <ul>
+        <li>Added new economic technology</li>
+        <li>Reduced cost ratio of barns</li>
+        <li>Added new enemy unit</li>
+        <li>Fixed a bug where fights could be lost with 1 hp</li>
+        <li>Fixed a bug affecting cost of scientists</li>
+        </ul>
+        <b>V 0.1.5</b>
+        <ul>
+        <li>New neutral technology</li>
+        <li>Increased all trade ratios</li>
+        </ul>
+        <b>V 0.1.4</b>
+        <ul>
+        <li>New science technology</li>
+        <li>New job - Scientists</li>
+        <li>Increased fight rewards</li>
+        </ul>
+        <b>V 0.1.3</b>
+        <ul>
+        <li>New economic technology</li>
+        <li>New building - Banks</li>
+        </ul>
+        <b>V 0.1.2</b>
+        <ul>
+        <li>New technologies (4)</li>
+        <li>New military unit - Medics</li>
+        <li>Each 1000 knowledge invested in a branch gives one legacy point on reset</li>
+        <li>Fights now can reward locks as loot</li>
+        <li>Decreased cost of Geology technology</li>
+        </ul>
+        <b>V 0.1.1</b>
+        <ul>
+        <li>Added technology branches after library 8</li>
+        <li>Buffed fighting</li>
+        </ul>
+        <b>V 0.1 Beta</b>
+        <ul>
+        <li>Added prestige system</li>
+        <li>Lots of balance fixes</li>
+        </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	</div>
+</body>
+<script>
+	setInterval(function(){ refresh()}, 250);
+	setInterval(function(){ save()}, 60000);
+
+	$("#militarypane, #jobspane, #craftingpane, #technologiespane, #casinopane, #dockpane, #marketpane, #leaderpane, #legacypane, #facilitiespane,#heirloomspane").addClass("invisible");
+	$(".block, .fire, .population,.toggle ,.titles,.craftamount,.encounter,.casinogame2,.ships,.tradesea,.expansionsea,.territory,.deals,.trains,.tradetrain,.currentrush,.slotmachine,.shardsnum").hide()
+	$(".playx10,.playx100").hide()
+	$(".trade_sand, .trademax_sand").hide()
+	$(".build_lumbermill").show();
+	
+	// This script replaces the long list of different build() calls below. 
+	// it fires whenever you slick on a DOM element with a class starting with 'build_'
+	$(".block[class*='build_']").click(function() {
+		// create an array from all of the classes in the element
+		var classes = $(this).attr("class").split(" ");
+		//loop through the array
+		classes.forEach(function(c) {
+			// check that the class starts with 'build_'. Nothing happens if no matching classes are found.
+			if (c.substring(0, 6) == "build_") {
+				// if it does, remove the 'build_' bit. You are left with the thing you want to build
+				var thing = c.replace("build_", "");
+				// build the thing!
+				build(thing);
+			}
+		})
+	});
+	// Same again for hires. 
+	$(".block[class*='hire_']").click(function() {
+		console.log('hiring worker');
+		var classes = $(this).attr("class").split(" ");
+		classes.forEach(function(c) {
+			console.log(c);
+			if (c.substring(0, 5) == "hire_") {
+				var thing = c.replace("hire_", "");
+				console.log(thing);
+				hire(thing);
+			}
+		})
+	});
+	// And also for research. 
+	$(".block[class*='tech_']").click(function() {
+		console.log('researching');
+		var classes = $(this).attr("class").split(" ");
+		classes.forEach(function(c) {
+			console.log(c);
+			if (c.substring(0, 5) == "tech_") {
+				var thing = c.replace("tech_", "");
+				research(thing);
+			}
+		})
+	});
+	// And finally for crafting
+	$(".block[class*='craft_']").click(function() {
+		console.log('crafting');
+		var classes = $(this).attr("class").split(" ");
+		classes.forEach(function(c) {
+			if (c.substring(0, 6) == "craft_") {
+				var thing = c.replace("craft_", "");
+				crafting(thing);
+			}
+		})
+	});
+	
+	
+	$(".expedition").click(function() {expedition()});
+        
+    $(".trade_wood").click(function() {trade("wood")});
+    $(".trademax_wood").click(function() {tradeMaximum("wood")});
+    $(".trade_mineral").click(function() {trade("mineral")});
+    $(".trademax_mineral").click(function() {tradeMaximum("mineral")});
+    $(".trade_food").click(function() {trade("food")});
+    $(".trademax_food").click(function() {tradeMaximum("food")});
+    $(".trade_sand").click(function() {trade("sand")});
+    $(".trademax_sand").click(function() {tradeMaximum("sand")});
+
+    $(".leader_sucellus").click(function() {lead("sucellus")});
+    $(".leader_eredal").click(function() {lead("eredal")});
+    $(".leader_khrysos").click(function() {lead("khrysos")});
+    $(".leader_elisia").click(function() {lead("elisia")});
+    $(".leader_xochiquetzal").click(function() {lead("xochiquetzal")});
+    $(".leader_warmuk").click(function() {lead("warmuk")});
+    $(".leader_foehn").click(function() {lead("foehn")});
+    $(".leader_alfear").click(function() {lead("alfear")});
+
+    $(".reespec").click(function() {reespec()});
+
+	$(".legacy_motivation").click(function() {lega("motivation")});
+	$(".legacy_depot").click(function() {lega("depot")});
+	$(".legacy_vengeance").click(function() {lega("vengeance")});
+	$(".legacy_aegis").click(function() {lega("aegis")});
+	$(".legacy_bargain").click(function() {lega("bargain")});
+	$(".legacy_mastery").click(function() {lega("mastery")});
+	$(".legacy_learning").click(function() {lega("learning")});
+	$(".legacy_memory").click(function() {lega("memory")});
+	$(".legacy_warp").click(function() {legacywarp()});
+
+	$(".rush1").click(function() {rush(1,1)});
+	$(".rush24").click(function() {rush(24,20)});
+	$(".rush7").click(function() {rush(168,100)});
+
+	unlocked[".legacy_motivation"]=1;
+	unlocked[".legacy_depot"]=1;
+	unlocked[".legacy_vengeance"]=1;
+	unlocked[".legacy_aegis"]=1;
+	unlocked[".legacy_bargain"]=1;
+	unlocked[".legacy_mastery"]=1;
+	unlocked[".legacy_learning"]=1;
+	unlocked[".legacy_warp"]=1;
+	unlocked[".legacy_memory"]=1;
+
+   	$(".research_military").click(function() {develop("military")});
+   	$(".research_economy").click(function() {develop("economy")});
+   	$(".research_science").click(function() {develop("science")});
+
+
+
+
+</script>
+<script>
+         load();
+
+</script>
+<script>
+if(technologies["deals"]==1){
+	setInterval(function(){ tickdeal()}, 1000);
+fillDeal();
+}
+</script>
+<script>
+	if(prestige["number"]>0){
+		$(".reespec").show()
+		unlocked[".reespec"]=1;
+		$(".legacy_memory").show()
+		unlocked[".legacy_memory"]=1;
+	}
+
+	refreshselect()
+	filllog();
+
+	if(people["galley"]>=1){
+		$(".salvage_galley").show()
+		unlocked[".salvage_galley"]=1;
+	}
+
+	;
+</script>
+
+<script>
+		update(unlocked,JSON.parse(Cookies.get( 'unlocked')));
+
+</script>
+<script>
+
+</script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+
+function darktheme() {
+    $("#estilo").attr("href", "css/darktheme.css");
+    bonus["theme"]="dark";
+}
+function cleartheme() {
+    $("#estilo").attr("href", "css/style.css");
+    bonus["theme"]="clear";
+}
+
+$("#performanceselect").change(function(){
+
+	tooltipfactor=$("#performanceselect").val();
+})
+</script>
+<script>
+
+refreshselecttrain()
+
+</script>
+<script>
+
+if(bonus["theme"]=="dark"){
+    $("#estilo").attr("href", "css/darktheme.css");
+}
+if(bonus["theme"]=="clear"){
+    $("#estilo").attr("href", "css/style.css");
+}
+
+</script>
+
+</html>
