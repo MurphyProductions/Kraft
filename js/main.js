@@ -353,7 +353,7 @@ function reespec(){
 	}
 	if(prestige["treasure"]>=cost){
 		prestige["treasure"]-=cost;
-		bonus["wood"]-=0.20*people["sucellus"]
+		bonus["wood"]-=10.20*people["sucellus"]
 		bonus["water"]-=0.20*people["sucellus"]
 		bonus["food"]-=0.20*people["sucellus"]
 		maximums["water"]-=5*people["sucellus"]
@@ -361,10 +361,10 @@ function reespec(){
 		bonus["iron"]-=0.10*people["eredal"]
 		bonus["steel"]-=0.10*people["eredal"]
 		bonus["mineral"]-=0.10*people["eredal"]
-		bonus["gold"]-=0.25*people["khrysos"]
+		bonus["gold"]-=10.25*people["khrysos"]
 		bonus["trade"]-=0.10*people["khrysos"]
 		bonus["craft"]-=0.05*people["elisia"]
-		maximums["wood"]-=500*people["elisia"]
+		maximums["wood"]-=1000*people["elisia"]
 		maximums["mineral"]-=500*people["elisia"]
 		maximums["population"]-=2*people["xochiquetzal"]
 		bonus["hp"]-=0.05*people["xochiquetzal"]
@@ -410,7 +410,7 @@ tooltipcurrent=10;
 	if(bonus["title"]>=1){
 		if (b=="sucellus"){
 
-			bonus["wood"]+=0.20
+			bonus["wood"]+=10.20
 			bonus["food"]+=0.20
 			bonus["water"]+=0.20
 			maximums["water"]+=5
@@ -421,9 +421,9 @@ tooltipcurrent=10;
 		}
 		else if (b=="eredal"){
 
-			bonus["mineral"]+=0.10
-			bonus["copper"]+=0.10
-			bonus["iron"]+=0.10
+			bonus["mineral"]+=10.10
+			bonus["copper"]+=10.10
+			bonus["iron"]+=10.10
 			bonus["steel"]+=0.10
 
 			bonus["title"]--
