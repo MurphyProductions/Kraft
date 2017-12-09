@@ -1149,7 +1149,7 @@ function crafting(b){
 		else if (b=="block"){
 
 			woodcost=100;
-			mineralcost=200;
+			mineralcost=100;
 
 			if (items["wood"]>=woodcost && items["mineral"]>=mineralcost){
 
@@ -1162,7 +1162,7 @@ function crafting(b){
 		}
 		else if (b=="coin"){
 
-			goldcost=5
+			goldcost=2
 
 			if (items["gold"]>=goldcost){
 
@@ -1253,15 +1253,15 @@ function crafting(b){
 
 				craft["chest"]+=1+bonus["craft"];
 
-				maximums["wood"]+=50*(bonus["craft"]+1);
-				maximums["mineral"]+=25*(bonus["craft"]+1);
+				maximums["wood"]+=50000*(bonus["craft"]+2);
+				maximums["mineral"]+=2005*(bonus["craft"]+2);
 				maximums["food"]+=10*(bonus["craft"]+1);
-				maximums["copper"]+=0.3*(bonus["craft"]+1);
-				maximums["gold"]+=0.05*(bonus["craft"]+1);
+				maximums["copper"]+=10.3*(bonus["craft"]+1);
+				maximums["gold"]+=20.05*(bonus["craft"]+1);
 				maximums["iron"]+=0.2*(bonus["craft"]+1);
-				maximums["tin"]+=0.15*(bonus["craft"]+1);
-				maximums["coal"]+=0.15*(bonus["craft"]+1);
-				maximums["steel"]+=0.10*(bonus["craft"]+1);
+				maximums["tin"]+=20.15*(bonus["craft"]+1);
+				maximums["coal"]+=20.15*(bonus["craft"]+1);
+				maximums["steel"]+=30.10*(bonus["craft"]+2);
 
 			}
 
@@ -1612,12 +1612,12 @@ var techdata = {
     bonus: {power: 0.4}
   },
   gambling: {
-    cost: {coin: 50},
+    cost: {coin: 10},
     unlock: [".casinogame2"],
     desc: ["Unlocks a new game at the casino"]
   },
   redeem: {
-    cost: {token: 50},
+    cost: {token: 10},
     unlock: [".build_relic"],
     desc: ["Allows redeeming tokens in the casino."]
   },
@@ -1631,12 +1631,12 @@ var techdata = {
     desc: ["Unlocks the buildings of shipyards"]
   },
   sailing: {
-    cost: {plank: 100},
+    cost: {plank: 200},
     unlock: [".build_docks"],
     desc: ["Allows building docks to store ships"]
   },
   trade: {
-    cost: {food: 7000, gold: 45, coin: 50},
+    cost: {food: 7000, gold: 25, coin: 20},
     unlock: [".craft_supplies", ".hire_sailor", ".tradesea"],
     desc: ["Allows hiring sailors to embark on trade missions"]
   },
@@ -1646,7 +1646,7 @@ var techdata = {
     desc: ["Allows crafting chests to store resources"]
   },
   specialization: {
-    cost: {knowledge: 500},
+    cost: {knowledge: 40},
     unlock: [".research_economy", ".research_science", ".research_military"],
     desc: ["Allows you to choose where your research should be headed",
       "New technologies will be unlocked based on your research"]
@@ -1666,32 +1666,32 @@ var techdata = {
     max: {morale: 2}
   },
   healing: {
-    cost: {coin: 100, knowledge: 200},
+    cost: {coin: 30, knowledge: 200},
     bonus: {hp: 0.05},
     unlock: [".hire_medic"],
     desc: ["Allows hiring medics to aid during combat"]
   },
   savings: {
-    cost: {coin: 100, knowledge: 200},
+    cost: {coin: 50, knowledge: 200},
     unlock: [".build_bank"],
     desc: ["Allows building banks to store gold and produce coins."]
   },
   studies: {
-    cost: {knowledge: 400},
+    cost: {knowledge: 100},
     unlock: [".hire_scientist"],
     desc: ["Allows hiring scientists that use funds to gain knowledge."]
   },
   organization: {
-    cost: {block: 500, knowledge: 300},
+    cost: {block: 500, knowledge: 200},
     bonus: {storage: 0.2}
   },
   culturaltrade: {
     name: "Cultural Trade",
-    cost: {bronze: 50, knowledge: 500},
+    cost: {bronze: 20, knowledge: 300},
     desc: ["Allows getting knowledge when trading with other civilizations"]
   },
   intelligence: {
-    cost: {steel: 100, knowledge: 500},
+    cost: {steel: 10, knowledge: 200},
     desc: ["When you win a fight, you get a chance to steal knowledge from the enemy"]
   },
   crushing: {
@@ -1711,7 +1711,7 @@ var techdata = {
     desc: ["Allows to find or steal water bottles to further increase water storage"]
   },
   galleon: {
-    cost: {wood: 40000, plank: 1000, knowledge: 800},
+    cost: {wood: 40000, plank: 1000, knowledge: 400},
     unlock: [".hire_galleon"],
     desc: ["Galleons are mega ships that can carry loads of resources"]
   },
@@ -1731,12 +1731,12 @@ var techdata = {
       "and hiring berserks"]
   },
   construction: {
-    cost: {block: 2000, knowledge: 800},
+    cost: {block: 500, knowledge: 500},
     unlock: [".build_blockyard"],
     desc: ["Lets you build blockyards to automate block manufacturing"]
   },
   architecture: {
-    cost: {block: 1500, structure: 500, steel: 150, knowledge: 1000},
+    cost: {block: 1500, structure: 500, steel: 150, knowledge: 100},
     unlock: [".craft_frame"],
     desc: ["Allows crafting frames, a complex building material."]
   },
@@ -1746,18 +1746,18 @@ var techdata = {
     desc: ["Lets you build laboratories where scientists can work"]
   },
   elephantry: {
-    cost: {supplies: 100, knowledge: 800},
+    cost: {supplies: 100, knowledge: 100},
     unlock: [".hire_warelephant"],
     desc: ["Allows you to ride elephants into war"]
   },
   wareconomy: {
     name: "War economy",
-    cost: {gold: 60, morale: 50, knowledge: 800},
+    cost: {gold: 60, morale: 50, knowledge: 40},
     bonus: {food: 0.1, gold: 0.1}
   },
   undergroundstorage: {
     name: "Underground storage",
-    cost: {chest: 50, knowledge: 500},
+    cost: {chest: 50, knowledge: 200},
     unlock: [".build_bunker"],
     desc: ["Allows building bunkers to store bulk materials"]
   },
@@ -1767,7 +1767,7 @@ var techdata = {
     desc: ["Lets you play x10 and x100 in the casino"]
   },
   investment: {
-    cost: {coin: 1000, knowledge: 300},
+    cost: {coin: 100, knowledge: 300},
     bonus: {invest: 2000},
     desc: ["Gives back 2000 coins at a rate of 0.1/s"]
   },
@@ -1776,17 +1776,17 @@ var techdata = {
     desc: ["Allows you to take back elephants from expeditions"]
   },
   expansion: {
-    cost: {supplies: 200, plank: 2000},
+    cost: {supplies: 200, plank: 200},
     unlock: [".expansionsea", ".territory"],
     desc: ["Allows you to conquest new territory by fleet fights"]
   },
   investigation: {
-    cost: {chemicals: 15, knowledge: 800},
+    cost: {chemicals: 15, knowledge: 100},
     unlock: [".build_scienceoutpost"],
     desc: ["Allows you to build scientific outposts in conquered territory"]
   },
   internationalization: {
-    cost: {gold: 70, bronze: 300, knowledge: 800},
+    cost: {gold: 70, bronze: 300, knowledge: 300},
     unlock: [".build_tradeoutpost"],
     desc: ["Allows you to build trade outposts in conquered territory"]
   },
@@ -2403,9 +2403,9 @@ var buildingdata = {
     bonus: {morale: 0.05}
   },
   towncenter: {
-    cost: {block: 20, structure: 5, coin: 3},
+    cost: {block: 10, structure: 5, coin: 3},
     scale: 1.25,
-    max: {wood: 1500, mineral: 1000, food: 500, copper: 10, gold: 2, iron: 10, tin: 10, coal: 5, steel: 5, population: 5}
+    max: {wood: 15000, mineral: 10000, food: 5000, copper: 100, gold: 20, iron: 100, tin: 100, coal: 5, steel: 10, population: 10}
   },
   workbench: {
     cost: {steel: 2},
@@ -2414,9 +2414,9 @@ var buildingdata = {
     unlock: [".toggle_workbench", ".craftamount"]
   },
   castle: {
-    cost: {block: 50, gold: 5},
+    cost: {block: 40, gold: 5},
     scale: 1.6,
-    bonus: {title: 1},
+    bonus: {title: 2},
     unlock: [".leader_sucellus", ".leader_eredal", ".leader_khrysos", ".leader_elisia",
       ".leader_xochiquetzal", ".leader_warmuk", ".titles", "#leaderpane"]
   },
@@ -2426,20 +2426,20 @@ var buildingdata = {
     bonus: {global: 0.01}
   },
   shipyard: {
-    cost: {wood: 20000, structure: 50},
+    cost: {wood: 2000, structure: 30},
     scale: 1.4,
     unlock: [".toggle_shipyard"]
   },
   docks: {
-    cost: {iron: 100, plank: 50},
+    cost: {iron: 20, plank: 30},
     scale: 1.3,
     max: {ships: 1},
     unlock: ["#dockpane", ".hire_galley", ".ships"]
   },
   bank: {
-    cost: {block: 200, steel: 100, coin: 100},
+    cost: {block: 200, steel: 30, coin: 26},
     scale: 1.4,
-    max: {gold: 2},
+    max: {gold: 5},
     unlock: [".toggle_bank"]
   },
   crusher: {
@@ -2502,7 +2502,7 @@ var buildingdata = {
     bonus: {storage: 0.05}
   },
   share: {
-    cost: {token: 1000},
+    cost: {token: 100},
     scale: 1.15
   },
   repository: {
