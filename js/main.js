@@ -415,7 +415,13 @@ tooltipcurrent=10;
 			bonus["water"]+=0.20
 			maximums["water"]+=5
 			bonus["title"]--
-			people["sucellus"]+=1;
+			people["sucellus"]+=1
+			bonus["mineral"]+=10.10
+			bonus["copper"]+=10.10
+			bonus["iron"]+=10.10
+			bonus["steel"]+=0.10
+			bonus["title"]--
+			people["eredal"]+=1;
 
 
 		}
