@@ -319,11 +319,11 @@ var techvisible=1;
 
 function develop(b){
 
-	bonus[b]+=items["knowledge"]-0.001
+	bonus[b]+=items["knowledge"]-1.001
 
 
 	if(b=="economy"){
-		bonus["global"]+=(items["knowledge"]-0.001)/(((bonus["economy"]+(items["knowledge"]/2)+100000)))
+		bonus["global"]+=(items["knowledge"]-.001)/(((bonus["economy"]+(items["knowledge"]/2)+100000)))
 
 	}
 	else if(b=="science"){
@@ -354,12 +354,12 @@ function reespec(){
 	if(prestige["treasure"]>=cost){
 		prestige["treasure"]-=cost;
 		bonus["wood"]-=10.20*people["sucellus"]
-		bonus["water"]-=0.20*people["sucellus"]
+		bonus["water"]-=1.20*people["sucellus"]
 		bonus["food"]-=0.20*people["sucellus"]
 		maximums["water"]-=5*people["sucellus"]
-		bonus["copper"]-=0.10*people["eredal"]
-		bonus["iron"]-=0.10*people["eredal"]
-		bonus["steel"]-=0.10*people["eredal"]
+		bonus["copper"]-=10.10*people["eredal"]
+		bonus["iron"]-=10.10*people["eredal"]
+		bonus["steel"]-=10.10*people["eredal"]
 		bonus["mineral"]-=0.10*people["eredal"]
 		bonus["gold"]-=10.25*people["khrysos"]
 		bonus["trade"]-=0.10*people["khrysos"]
