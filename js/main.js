@@ -1677,7 +1677,7 @@ var techdata = {
     desc: ["Allows building banks to store gold and produce coins."]
   },
   studies: {
-    cost: {knowledge: 100},
+    cost: {knowledge: 10},
     unlock: [".hire_scientist"],
     desc: ["Allows hiring scientists that use funds to gain knowledge."]
   },
