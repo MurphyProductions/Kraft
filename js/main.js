@@ -339,7 +339,7 @@ function develop(b){
 
 
 
-	items["knowledge"]=0.001;
+	items["knowledge"]=10.001;
 	researchunlock()
 }
 function reespec(){
