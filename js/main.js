@@ -1687,11 +1687,11 @@ var techdata = {
   },
   culturaltrade: {
     name: "Cultural Trade",
-    cost: {bronze: 20, knowledge: 300},
+    cost: {bronze: 20, knowledge: 30},
     desc: ["Allows getting knowledge when trading with other civilizations"]
   },
   intelligence: {
-    cost: {steel: 10, knowledge: 200},
+    cost: {steel: 10, knowledge: 50},
     desc: ["When you win a fight, you get a chance to steal knowledge from the enemy"]
   },
   crushing: {
