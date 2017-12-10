@@ -1241,7 +1241,7 @@ function crafting(b){
 			plankcost=100;
 			steelcost=30;
 			bronzecost=5;
-			lockcost=1;
+			lockcost=0;
 
 			if (craft["plank"]>=plankcost && craft["bronze"]>=bronzecost && craft["lock"]>=lockcost && items["steel"]>=steelcost){
 
