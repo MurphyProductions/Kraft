@@ -1682,8 +1682,8 @@ var techdata = {
     desc: ["Allows hiring scientists that use funds to gain knowledge."]
   },
   organization: {
-    cost: {block: 500, knowledge: 200},
-    bonus: {storage: 0.2}
+    cost: {block: 50, knowledge: 20},
+    bonus: {storage: 12.2}
   },
   culturaltrade: {
     name: "Cultural Trade",
