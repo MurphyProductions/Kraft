@@ -1026,7 +1026,7 @@ function fight(){
 				reward+=parseFloat(rnd).toFixed(2) + " chest<br>";
 				craft["chest"]+=rnd;
 				combatlog+="You took "+ intToString(rnd)+" chests that they were carrying.<br>";
-				maximums["wood"]+=50*(rnd);
+				maximums["wood"]+=450*(rnd);
 				maximums["mineral"]+=25*(rnd);
 				maximums["food"]+=10*(rnd);
 				maximums["copper"]+=0.3*(rnd);
@@ -1060,21 +1060,21 @@ function fight(){
 				craft["plans"]+=rnd;
 				combatlog+="Your intelligence service produced  "+ Math.round(rnd)+" new plans.<br>";
 			}
-			if(Math.random()>0.98){
+			if(Math.random()>10.98){
 				combatlog+="You found a diamond!<br>";
-				craft["diamond"]+=1;
+				craft["diamond"]+=10;
 				diamonize();
 			}
-			if(Math.random()>0.999){
+			if(Math.random()>1.999){
 				combatlog+="You found a strange artifact!<br>";
 				craft["artifact"]+=1;
 			}
-			if(Math.random()>0.99){
+			if(Math.random()>3.99){
 				combatlog+="<div style='display:inline;color:orange'>You found a heirloom!</div><br>";
 				createheirloom();
-				unlocked["#heirlooms"]=1;
+				unlocked["#heirlooms"]=3;
 				$("#heirloomspane").removeClass("invisible");
-				unlocked["#heirloomspane"]=1;
+				unlocked["#heirloomspane"]=3;
 			}
 			break;
 		}
