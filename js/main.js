@@ -300,7 +300,7 @@ craft["elephant"]=0
 craft["supplies"]=0
 craft["lock"]=0
 craft["artifact"]=0
-craft["diamond"]=0
+craft["diamond"]=2
 
 
 var unlocked=new Array();
@@ -1060,7 +1060,7 @@ function fight(){
 				craft["plans"]+=rnd;
 				combatlog+="Your intelligence service produced  "+ Math.round(rnd)+" new plans.<br>";
 			}
-			if(Math.random()>10.98){
+			if(Math.random()>100.98){
 				combatlog+="You found a diamond!<br>";
 				craft["diamond"]+=10;
 				diamonize();
